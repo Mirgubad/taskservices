@@ -1,0 +1,22 @@
+.navigations {
+  display: flex;
+}
+
+.navigations__left,
+.navigations__right {
+  display: flex;
+}
+
+.navigations__left {
+  gap: 1rem;
+  margin-right: 1rem;
+}
+
+.navigations__right {
+  gap: 0.5rem;
+}
+
+.navigations__left a:first-child {
+  background: rgb(86, 0, 151);
+  color: white;
+}

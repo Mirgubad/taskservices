@@ -1,0 +1,31 @@
+.select {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 7rem;
+  max-width: 7rem;
+  position: relative;
+  color: gray;
+  cursor: pointer;
+}
+
+.options {
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  background: white;
+  width: 100%;
+  z-index: 99;
+}
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+.option:hover {
+  color: black;
+  background: gray;
+}

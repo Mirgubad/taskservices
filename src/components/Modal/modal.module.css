@@ -1,0 +1,23 @@
+.modal {
+  border: 0;
+  width: 29rem;
+  padding: 3rem;
+  display: grid;
+  place-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.action__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.action__buttons a{
+    background: #aaa;
+    color: #FFF;
+}
+.title{
+    margin-bottom: 2rem;
+}

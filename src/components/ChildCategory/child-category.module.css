@@ -1,0 +1,118 @@
+.child__category {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.child__category--item {
+  height: 4rem;
+  width: 20rem;
+  position: relative;
+}
+
+.child__category--item.active:before {
+  content: "";
+  position: absolute;
+  top: 5rem;
+  height: 20px;
+  left: 50%;
+  width: 1px;
+  transform: translate(-50%, -50%);
+  border-top: 20px solid #aaa;
+}
+/*We will use ::before and ::after to draw the connectors*/
+.child__category::before,
+.child__category::after {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  right: 50%;
+  border-top: 1px solid #aaa;
+  width: 80%;
+  height: 2rem;
+  transition: border-color 100ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.child__category::after {
+  right: auto;
+  left: 50%;
+  border-left: 1px solid #aaa;
+}
+
+.child__category:only-child {
+  padding-top: 0;
+}
+
+.child__category:only-child::after,
+.child__category:only-child::before {
+  display: none;
+}
+
+.child__category:first-child::before,
+.child__category:last-child::after {
+  border: none;
+}
+
+.child__category:last-child {
+  padding-right: 0;
+}
+
+/* Adding back the vertical connector to the last nodes */
+.child__category:last-child::before {
+  border-right: 1px solid #aaa;
+  border-top-right-radius: 0.25rem;
+}
+
+.child__category:first-child::after {
+  border-top-left-radius: 0.25rem;
+}
+
+.action__buttons {
+  position: absolute;
+  right: -10rem;
+  top: 13%;
+  display: flex;
+  gap: 1rem;
+}
+.action__buttons > div {
+  cursor: pointer;
+  padding: 0.5rem;
+  background: #b1b1b1;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+.delete {
+  background: red !important;
+}
+
+.child__category input:disabled {
+  background: rgb(196, 94, 5);
+}
+
+.child__category input:disabled::placeholder {
+  color: white !important;
+}
+
+.sub__categories {
+  display: flex;
+  gap: 12rem;
+  top: 7rem;
+}
+
+.modal__wrapper {
+  top: 6rem;
+  position: absolute;
+  left: 20rem;
+}
+
+.modal__wrapper::after {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  width: 2rem;
+  background: white;
+  height: 1rem;
+  transform: matrix(1, 1, -1, 1, 13, 13);
+  z-index: -1;
+}

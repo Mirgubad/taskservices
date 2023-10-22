@@ -1,0 +1,42 @@
+.app__container {
+  position: relative;
+  min-height: 88vh;
+  overflow: hidden;
+  user-select: none;
+  display: grid;
+  place-content: center;
+  cursor: move;
+}
+
+.button__up,
+.button__down,
+.button__left,
+.button__right {
+  position: absolute;
+  z-index: 1;
+}
+.button__up,
+.button__down {
+  left: 50%;
+  transform: translate(-50%, -1%);
+}
+.button__up {
+  top: 0;
+}
+.button__down {
+  bottom: 0;
+  transform: rotate(180deg);
+}
+.button__left,
+.button__right {
+  top: 50%;
+}
+
+.button__left {
+  left: -3.1rem;
+  transform: rotate(270deg);
+}
+.button__right {
+  right: -3.1rem;
+  transform: rotate(90deg);
+}

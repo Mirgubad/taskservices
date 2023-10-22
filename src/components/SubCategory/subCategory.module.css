@@ -1,0 +1,118 @@
+.sub__category {
+  position: relative;
+}
+
+.sub__category--item {
+  height: 4rem;
+  background: lightblue;
+  width: 20rem;
+}
+
+.sub__category::before,
+.sub__category::after {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  right: 50%;
+  border-top: 1px solid #aaa;
+  width: 80%;
+  height: 2rem;
+  transition: border-color 100ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sub__category--item.active::before {
+  content: "";
+  position: absolute;
+  top: 5rem;
+  height: 20px;
+  left: 50%;
+  width: 1px;
+  transform: translate(-50%, -50%);
+  border-top: 20px solid #aaa;
+}
+.sub__category::after {
+  right: auto;
+  left: 50%;
+  border-left: 1px solid #aaa;
+}
+
+.sub__category:only-child {
+  padding-top: 0;
+}
+
+.sub__category:only-child::after,
+.sub__category:only-child::before {
+  display: none;
+}
+
+.sub__category:first-child::before,
+.sub__category:last-child::after {
+  border: none;
+}
+
+.sub__category:last-child {
+  padding-right: 0;
+}
+
+/* Adding back the vertical connector to the last nodes */
+.sub__category:last-child::before {
+  border-right: 1px solid #aaa;
+  border-top-right-radius: 0.25rem;
+}
+
+.sub__category:first-child::after {
+  border-top-left-radius: 0.25rem;
+}
+
+/* .sub__category::after {
+  content: "";
+  position: absolute;
+  width: 1.5px;
+  top: -11px !important;
+  height: 2rem;
+  background-color: gray;
+}
+
+.sub__category::after {
+  border-top: 1px solid gray;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sub__category:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  width: 100%;
+  border-top: 1px solid gray;
+} */
+.action__buttons {
+  position: absolute;
+  right: -10rem;
+  top: 13%;
+  display: flex;
+  gap: 1rem;
+}
+.action__buttons > div {
+  cursor: pointer;
+  padding: 0.5rem;
+  background: #b1b1b1;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+.delete {
+  background: red !important;
+}
+
+.sub__category input:disabled {
+  background: lightseagreen;
+  color: white !important;
+}
+
+.sub__categories {
+  display: flex;
+  gap: 12rem;
+  top: 7rem;
+}
