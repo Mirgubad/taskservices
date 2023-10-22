@@ -13,7 +13,7 @@ const ChildCategory: React.FC<ChildCategoryProps> = ({
     childCategories,
     setChildCategories,
 }) => {
-    const [value, setValue] = useState("")
+    const [_value, setValue] = useState("")
     const [disabled, setDisabled] = useState(false)
     const [subCategories, setSubCategories] = useState<JSX.Element[]>([])
     const [serviceCategories, setServiceCategories] = useState<JSX.Element[]>([])
@@ -31,7 +31,6 @@ const ChildCategory: React.FC<ChildCategoryProps> = ({
             setSubCategories((prevCategories) => [
                 ...prevCategories,
                 <SubCategory
-                    setSubCategories={setSubCategories}
                     key={prevCategories.length}
                 />,
             ])
@@ -229,7 +228,6 @@ const ChildCategory: React.FC<ChildCategoryProps> = ({
                         <Modal
                             setShowModal={setShowModal}
                             setServiceCategories={setServiceCategories}
-                            showModal={showModal}
                             setSubCategories={setSubCategories}
                             setCreateSubCategory={setCreateSubCategory}
                         />

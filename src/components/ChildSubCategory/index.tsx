@@ -5,14 +5,14 @@ interface ChildSubCategoryProps {
     subChildCategories: any[]
     setSubChildCategories: React.Dispatch<React.SetStateAction<any[]>>
 }
+
 const ChildSubCategory: React.FC<ChildSubCategoryProps> = ({
     subChildCategories,
     setSubChildCategories,
 }) => {
-    const [value, setValue] = useState("")
+    const [_value, setValue] = useState("")
     const [disabled, setDisabled] = useState(false)
     const [subCategories, setSubCategories] = useState<JSX.Element[]>([])
-    const [serviceCategories, setServiceCategories] = useState<JSX.Element[]>([])
 
 
     const handleDelete = (key: number) => {
@@ -22,7 +22,6 @@ const ChildSubCategory: React.FC<ChildSubCategoryProps> = ({
     }
 
     const addChildCategory = () => {
-
         setSubCategories((prevCategories) => [
             ...prevCategories,
             <ChildSubCategory
@@ -31,7 +30,6 @@ const ChildSubCategory: React.FC<ChildSubCategoryProps> = ({
                 key={prevCategories.length}
             />,
         ])
-
     }
 
     return (
@@ -39,7 +37,7 @@ const ChildSubCategory: React.FC<ChildSubCategoryProps> = ({
             <div
                 style={{
                     marginBottom:
-                        subCategories.length > 1 || serviceCategories.length > 1
+                        subCategories.length > 1
                             ? "4rem"
                             : "2rem",
                 }}
@@ -218,8 +216,6 @@ const ChildSubCategory: React.FC<ChildSubCategoryProps> = ({
                     </div>
                 )}
             </div>
-
-
         </div>
     )
 }
